@@ -1,0 +1,55 @@
+{
+  "info": {
+    "_postman_id": "a3c52b5c-0857-402b-a7b5-06c3b33e3c1d",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53839409",
+    "_collection_link": "https://go.postman.co/collection/53839409-a3c52b5c-0857-402b-a7b5-06c3b33e3c1d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Monitor_Collection",
+      "item": [
+        {
+          "name": "GET Users - Monitor",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", () => pm.response.to.have.status(200));\r",
+                  "pm.test(\"Response time < 800ms\", () => pm.expect(pm.response.responseTime).to.be.below(800));"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://gorest.co.in/public/v2/users",
+              "protocol": "https",
+              "host": [
+                "gorest",
+                "co",
+                "in"
+              ],
+              "path": [
+                "public",
+                "v2",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
